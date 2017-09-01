@@ -29,8 +29,8 @@ import numpy as np
 #plotting and visualization library
 import matplotlib.pyplot as plt
 #Display on the notebook
-get_ipython().magic(u'matplotlib inline')
-plt.ion() #Turn interactive mode on.
+#get_ipython().magic(u'matplotlib inline')
+#plt.ion() #Turn interactive mode on.
 
 
 # In[2]:
@@ -43,16 +43,16 @@ transform = transforms.Compose(
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
 #inbuilt dataset class for reading CIFAR10 dataset
-trainset = torchvision.datasets.CIFAR10(root='data/imgFolders', train=True,
-                                        download=True, transform=transform)
+trainset = torchvision.datasets.CIFAR10(root='../data/imgFolders', train=True,
+                                        download=False, transform=transform)
 
 #dataloader for Batching, shuffling and loading data in parallel
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4,
                                           shuffle=True, num_workers=2)
 
 ####test data
-testset = torchvision.datasets.CIFAR10(root='data/imgFolders', train=False,
-                                       download=True, transform=transform)
+testset = torchvision.datasets.CIFAR10(root='../data/imgFolders', train=False,
+                                       download=False, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=4,
                                          shuffle=False, num_workers=2)
 
@@ -375,4 +375,10 @@ for data in testloader:
     correct += (predicted == labels).sum()
 
 print('Accuracy of the network on the 10000 test images: %d %%' % (100 * correct / total))
+
+
+# In[ ]:
+
+
+
 
