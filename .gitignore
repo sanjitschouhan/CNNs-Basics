@@ -1,3 +1,8 @@
 data/
 
 Neural\ Network\ -\ Image\ Recognition/saved\ models/
+.ipynb_checkpoints
+.vscode
+Neural Network - Image Recognition/.ipynb_checkpoints
+opencv _haarcascade/.vscode
+opencv _haarcascade/faces
